@@ -43,7 +43,22 @@ const getUserMessage = async(req,res)=>{
         })
     }
 }
+const getAllMessages = async(req,res) =>{
+    const allMessages = await messageModel.find({}).populate([{
+        path:'reciever',
+        select:'userName'
+    },
+    {
+        path:'sender',
+        select:'userName'
+    }]);
+    res.json({
+        message:'messages',
+        data:allMessages
+    })
+}
 module.exports = {
     sendMessage,
-    getUserMessage
+    getUserMessage,
+    getAllMessages
 }
