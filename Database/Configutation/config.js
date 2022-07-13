@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const initConnection = ()=>{
-   return mongoose.connect("mongodb://localhost:27017/AskingApp").then((result) => {
+   return mongoose.connect(process.env.CONNECTION_STRING).then((result) => {
     }).catch((err) => {
         console.log(err);
     });

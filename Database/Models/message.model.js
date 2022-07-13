@@ -11,7 +11,9 @@ const messageSchema = new mongoose.Schema({
     reciever:{
         type:mongoose.Types.ObjectId,
         ref:'users',  
-    }
+    },
+    reply:String,
+    isAnonymous:Boolean
 },{timestamps:true});
 const messageModel = mongoose.model("messages",messageSchema);
 module.exports =  messageModel;

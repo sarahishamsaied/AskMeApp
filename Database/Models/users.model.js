@@ -13,6 +13,7 @@ const userSchema =  new mongoose.Schema({
     age:Number,
     phone:String,
     password:String,
+    cPassword:String,
     picUrl:String
 })
 const userModel = mongoose.model("users",userSchema);
